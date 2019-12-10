@@ -1,0 +1,40 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+
+	<bean id="add1" class="spring2ndlessons.Address">
+
+		<property name="add1" value="suit 550" />
+		<property name="add2" value="2750 prosperity Ave"></property>
+		<property name="city" value="Fairfax"></property>
+		<property name="state" value="VA"></property>
+		<property name="zipcode" value="22030"></property>
+
+	</bean>
+
+	<bean id="currSrvice" class="springconstructor.CarruculamService" />
+
+	<bean id="sprtsrv" class="springconstructor.SportService">
+		<property name="soccer" ref="soccer"></property>
+
+	</bean>
+	
+	<bean id="soccer" class ="springconstructor.SoccerService"/>
+
+	<bean id="school" class="springconstructor.SchoolService">
+		<constructor-arg ref="sprtsrv"/>
+		<constructor-arg ref="currSrvice"/>
+
+	</bean>
+
+	
+
+
+
+
+
+
+
+</beans>
